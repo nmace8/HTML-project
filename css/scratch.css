@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #1a73e8;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Header styles */
+.music.header {
+    background-color: #282c34;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Navigation styles */
+nav {
+    background-color: #444;
+    text-align: center;
+    padding: 10px 0;
+}
+
+nav a {
+    margin: 0 15px;
+    color: white;
+    font-weight: bold;
+}
+
+/* Main content */
+.common.mainbody {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.centered-list {
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+/* Image styling */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Movie categories */
+.largeText {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Nested ordered lists */
+ul.centered-list ol {
+    padding-left: 20px;
+    margin-top: 10px;
+    text-align: left;
+}
+
+/* Footer */
+.common.footer {
+    background-color: #282c34;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 1em;
+}
+
+/* Tableau container */
+.tableauPlaceholder {
+    margin-top: 40px;
+    text-align: center;
+}

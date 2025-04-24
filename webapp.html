@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coin Flip Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f0f0f0;
+      padding: 50px;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      display: inline-block;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      background-color: #007BFF;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    #result, #score, #winner {
+      margin-top: 20px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Coin Flip Game</h1>
+    <p>Choose Heads or Tails</p>
+    <button onclick="play('Heads')">Heads</button>
+    <button onclick="play('Tails')">Tails</button>
+    <div id="result"></div>
+    <div id="score"></div>
+    <div id="winner"></div>
+  </div>
+
+  <script>
+    let playerScore = 0;
+    let computerScore = 0;
+
+    function play(playerGuess) {
+      if (playerScore >= 5 || computerScore >= 5) return;
+
+      const computerGuess = Math.random() < 0.5 ? 'Heads' : 'Tails';
+      const coinFlip = Math.random() < 0.5 ? 'Heads' : 'Tails';
+
+      let resultText = `You guessed: ${playerGuess}, Computer guessed: ${computerGuess}.<br>Coin landed on: ${coinFlip}.`;
+
+      if (playerGuess === coinFlip) playerScore++;
+      if (computerGuess === coinFlip) computerScore++;
+
+      document.getElementById('result').innerHTML = resultText;
+      document.getElementById('score').innerHTML = `Score - You: ${playerScore}, Computer: ${computerScore}`;
+
+      if (playerScore === 5 || computerScore === 5) {
+        const winner = playerScore === 5 ? 'You win! 🎉' : 'Computer wins! 🤖';
+        document.getElementById('winner').innerHTML = `<strong>${winner}</strong>`;
+      }
+    }
+  </script>
+</body>
+</html>
